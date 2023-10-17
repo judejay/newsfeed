@@ -1,8 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import NewsNavbar from './components/newsNavbar'
 
 export default function Home() {
   return (
+    <>
+    <NewsNavbar />
+
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -91,5 +95,6 @@ export default function Home() {
         </a>
       </div>
     </main>
+    </>
   )
 }
