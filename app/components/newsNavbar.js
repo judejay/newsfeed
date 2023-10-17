@@ -9,27 +9,40 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
+import Image from 'next/image';
 function NewsNavbar() {
   return (
-    <Navbar style={{backgroundSize: "0", backgroundColor: "#5d5df5"}} className="justify-content-between">
+    <Navbar style={{backgroundColor: "#5d5df5"}} data-bs-theme="dark"  className="justify-content-between">
+       <Col>
         <Navbar className="">
         <Container>
           <Navbar.Brand href="#home">
-            <img
+            <Image
               alt=""
               src="/headShot.png"
-              width="30"
-              height="40"
-              className="d-inline-block align-top"
+              width="50"
+              height="70"
+              className="d-inline-block "
             />{' '}
-            SAMPLE PAGE
+           <span class="font-weight-bolder">SAMPLE PAGE</span> 
+           <Image
+              alt=""
+              src="/cubes.png"
+              width="50"
+              height="50"
+              className=" justify-content-end "
+            />{' '}
           </Navbar.Brand>
+      
         </Container>
       </Navbar>
-            <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <NavDropdown title="Features" id="basic-nav-dropdown">
+      </Col>
+      <Col>
+      
+            <Nav className="me-auto justify-content-begin flex-grow-1 pe-3">
+
+            <Nav.Link style={{color: "white"}} href="#home">Home</Nav.Link>
+            <NavDropdown  title="Features" id="basic-nav-dropdown" >
               <NavDropdown.Item href="#action/3.1">Features</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -52,20 +65,30 @@ function NewsNavbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          </Col>
+          <Col>
+          <Nav className="justify-content-begin flex-grow-1 pe-3">
       <Form inline="true">
         <Row>
           <Col xs="auto">
             <Form.Control
+            style={{backgroundColor: "#4b4ac4"}} 
               type="text"
-              placeholder="Search"
+              placeholder="Enter your search here..."
               className=" mr-sm-2"
             />
           </Col>
           <Col xs="auto">
-            <Button type="submit">Submit</Button>
           </Col>
         </Row>
       </Form>
+      </Nav>
+      </Col>
+      <Col>
+      <Nav className="justify-content-end flex-grow-1 pe-3">
+      <Button type="submit">Login</Button>
+    </Nav>
+      </Col>
     </Navbar>
   );
 }
