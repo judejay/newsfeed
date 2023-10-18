@@ -1,13 +1,19 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import NewsNavbar from './components/newsNavbar'
+import SideMenu from './components/sideMenu'
+import SideDrawer from './components/sideDrawer'
+import Col from 'react-bootstrap/Col';
 
 export default function Home() {
   return (
     <>
     <NewsNavbar />
-
-    <main className={styles.main}>
+    <main style={{backgroundColor: 'red'}} className={styles.main}>
+      <Col>
+    <SideDrawer />
+    </Col>
+    <Col>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -94,6 +100,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+      </Col>
     </main>
     </>
   )
