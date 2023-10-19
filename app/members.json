@@ -1,0 +1,42 @@
+{
+    
+  "members": [{
+    "firstName": "Sandra",
+    "secondName": "Strange",
+    "email": "@sanstrange",
+    "friend": true,
+    "comments": 1
+},{
+    "firstName": "Rosie",
+    "secondName": "Sakura",
+    "email": "@sakurara",
+    "friend": false,
+    "comments": 4
+},
+{
+    "firstName": "Damien",
+    "secondName": "Greyson",
+    "email": "@dgreyson",
+    "friend": false,
+    "comments": 1
+},
+{
+    "firstName": "The Green",
+    "secondName": "Goo",
+    "email": "@greengoo",
+    "friend": false,
+    "comments": 1
+
+
+},
+{
+    "firstName": "Bearded",
+    "secondName": "Wonder",
+    "email": "@brdwonder",
+    "friend": false,
+    "comments": 2
+
+
+}
+
+]}

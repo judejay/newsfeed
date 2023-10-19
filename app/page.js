@@ -11,12 +11,18 @@ import QuestsCard from './components/QuestsCard'
 import UpdatesCard from './components/UpdatesCard'
 import PostUpdateCard from './components/PostUpdateCard'
 import PopularGroupsCard from './components/PopularGroupsCard'
-import Badges from './components/Badges'
-export default function Home() {
+import Badges from './components/Badges';
+import { promises as fs } from 'fs';
+import Stack from 'react-bootstrap/Stack';
+
+export default async function Home() {
+  const file = await fs.readFile(process.cwd() + '/app/members.json', 'utf-8');
+  const memberData = JSON.parse(file);
+  console.log("memberData", memberData)
   return (
     <>
     <NewsNavbar />
-    <main style={{backgroundColor: 'red'}} >
+    <main style={{backgroundColor: 'white'}} >
       <Col>
     <SideDrawer />
     </Col>
@@ -29,9 +35,14 @@ export default function Home() {
         <Col>
         <Row>
           <Container>
-          <MemberCard>
-            
-          </MemberCard>
+            <p>New Members</p>
+            <Stack gap={3}>
+            {memberData.members.map((member) => (
+              <MemberCard key={member.email} member={member}>
+            </MemberCard>
+            ))}
+            </Stack>
+          
           </Container>
         </Row>
         <Row>

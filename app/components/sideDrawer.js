@@ -22,8 +22,6 @@ export default function SideDrawer() {
     <ListGroup.Item><div className="p-2 ml-4"><Button variant="light"><PcDisplayHorizontal /></Button></div></ListGroup.Item>
     <ListGroup.Item><div className="p-2"><Button variant="light"><Person /></Button></div></ListGroup.Item>
     <ListGroup.Item><div className="p-2"><Button variant="light"><People /></Button></div></ListGroup.Item>
-    
-    <ListGroup.Item><div className="p-2"><Button variant="light"><People /></Button></div></ListGroup.Item>
     <ListGroup.Item><div className="p-2"><Button variant="light"><Award /></Button></div></ListGroup.Item>
     <ListGroup.Item><div className="p-2"><Button variant="light"><Star /></Button></div></ListGroup.Item>
     <ListGroup.Item><div className="p-2"><Button variant="light"><ChevronDoubleDown /></Button></div></ListGroup.Item>
