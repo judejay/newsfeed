@@ -4,102 +4,68 @@ import NewsNavbar from './components/newsNavbar'
 import SideMenu from './components/sideMenu'
 import SideDrawer from './components/sideDrawer'
 import Col from 'react-bootstrap/Col';
-
+import Banner from './components/Banner';
+import { Container, Row } from 'react-bootstrap';
+import MemberCard from './components/MemberCard'
+import QuestsCard from './components/QuestsCard'
+import UpdatesCard from './components/UpdatesCard'
+import PostUpdateCard from './components/PostUpdateCard'
+import PopularGroupsCard from './components/PopularGroupsCard'
+import Badges from './components/Badges'
 export default function Home() {
   return (
     <>
     <NewsNavbar />
-    <main style={{backgroundColor: 'red'}} className={styles.main}>
+    <main style={{backgroundColor: 'red'}} >
       <Col>
     <SideDrawer />
     </Col>
     <Col>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <Container className={styles.description}>
+      <Row className="justify-content-md-center">
+        <Banner />
+      </Row>
+      <Row>
+        <Col>
+        <Row>
+          <Container>
+          <MemberCard>
+            
+          </MemberCard>
+          </Container>
+        </Row>
+        <Row>
+          <Container>
+          <QuestsCard></QuestsCard>
+          </Container>
+        </Row>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        </Col>
+      
+        <Col>  <Row>
+          <UpdatesCard>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          </UpdatesCard>
+        </Row>
+        <Row>
+          <PostUpdateCard></PostUpdateCard>
+        </Row>
+</Col>
+        <Col>
+        <Row>
+          <Container>
+            <PopularGroupsCard></PopularGroupsCard>
+          </Container>
+        </Row>
+        <Row>
+          <Container>
+            <Badges />
+          </Container>
+        </Row>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </Col>
+      </Row>
+      </Container>
       </Col>
     </main>
     </>

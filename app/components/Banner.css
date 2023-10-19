@@ -1,0 +1,7 @@
+#Banner {
+    margin-top: 20px;
+    margin-left: 100px;
+    background-color: aqua;
+    min-height: 100px;
+    min-width: 500px;
+}
