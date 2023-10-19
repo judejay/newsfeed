@@ -11,7 +11,7 @@ const MemberCard = ({member}) => {
      
     <Image height={45} width={45} alt="" src="/cubes.png" />    
       </Col>
-      <Col  xs={10}>
+      <Col  xs={9}>
       <Row>
         <span>{member.firstName + " " + member.secondName} </span> 
       </Row>

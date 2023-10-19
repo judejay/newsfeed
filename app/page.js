@@ -18,7 +18,7 @@ import Stack from 'react-bootstrap/Stack';
 export default async function Home() {
   const file = await fs.readFile(process.cwd() + '/app/members.json', 'utf-8');
   const memberData = JSON.parse(file);
-  console.log("memberData", memberData)
+  
   return (
     <>
     <NewsNavbar />
@@ -32,7 +32,8 @@ export default async function Home() {
         <Banner />
       </Row>
       <Row>
-        <Col>
+        <Col>         
+        <Stack gap={3}>
         <Row>
           <Container>
             <p>New Members</p>
@@ -41,8 +42,7 @@ export default async function Home() {
               <MemberCard key={member.email} member={member}>
             </MemberCard>
             ))}
-            </Stack>
-          
+            </Stack>          
           </Container>
         </Row>
         <Row>
@@ -50,18 +50,23 @@ export default async function Home() {
           <QuestsCard></QuestsCard>
           </Container>
         </Row>
-
-        </Col>
-      
-        <Col>  <Row>
+          </Stack>
+        </Col>      
+        <Col xs={4}>  
+        <Stack gap={3}>
+        <Row>
+          <Container>
           <UpdatesCard>
-
           </UpdatesCard>
+          </Container>
         </Row>
         <Row>
+          <Container>
           <PostUpdateCard></PostUpdateCard>
+          </Container>
         </Row>
-</Col>
+        </Stack>
+        </Col>
         <Col>
         <Row>
           <Container>
@@ -73,7 +78,6 @@ export default async function Home() {
             <Badges />
           </Container>
         </Row>
-
         </Col>
       </Row>
       </Container>
