@@ -16,9 +16,11 @@ import { promises as fs } from 'fs';
 import Stack from 'react-bootstrap/Stack';
 
 export default async function Home() {
-  const file = await fs.readFile(process.cwd() + '/app/members.json', 'utf-8');
-  const memberData = JSON.parse(file);
-  
+  const membersfile = await fs.readFile(process.cwd() + '/app/data/members.json', 'utf-8');
+  const memberData = JSON.parse(membersfile);
+  const questsfile = await fs.readFile(process.cwd() + '/app/data/quests.json', 'utf-8');
+  const questData = JSON.parse(questsfile);
+  console.log(questData);
   return (
     <>
     <NewsNavbar />
@@ -41,13 +43,16 @@ export default async function Home() {
             {memberData.members.map((member) => (
               <MemberCard key={member.email} member={member}>
             </MemberCard>
-            ))}
+            ))};
             </Stack>          
           </Container>
         </Row>
         <Row>
           <Container>
-          <QuestsCard></QuestsCard>
+            <p>Quests</p>
+            {questData.data.map((quest) => (
+              <QuestsCard key={quest.user} quest={quest}></QuestsCard>
+            ))};          
           </Container>
         </Row>
           </Stack>
